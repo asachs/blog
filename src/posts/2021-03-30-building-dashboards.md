@@ -59,7 +59,7 @@ When considering whether something will make a good SLI, ask yourself whether
 your stakeholders would move to a different system if you failed to deliver on it.
 If the answer is "no", it's not a good SLI. Conversely, just because you have
 something which correlates with customers leaving, it doesn't mean you've found
-and SLI - **correlation is not causation**.
+an SLI - **correlation is not causation**.
 
 ::: warning
 > We should use CPU utilization as an SLI because when it goes above 80% our customers get unhappy.
