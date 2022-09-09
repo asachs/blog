@@ -1,7 +1,6 @@
 import {defineUserConfig} from 'vuepress-vite'
 import type {App, Page, PageHeader} from "@vuepress/core"
-import defaultTheme, {DefaultThemeOptions} from '@vuepress/theme-default'
-import {join} from "path"
+import defaultTheme from '@vuepress/theme-default'
 import {path} from '@vuepress/utils'
 
 import mitfootnote from "markdown-it-footnote"
