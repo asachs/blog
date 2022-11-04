@@ -27,7 +27,8 @@ export default defineUserConfig({
   head: [
     ['meta', { name: "description", content: "The official Sierra Softworks blog, written by Benjamin Pannell." }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'me', href: 'https://mastodon.online/@notheotherben' }]
+    ['link', { rel: 'me', href: 'https://mastodon.online/@notheotherben' }],
+    ['link', { rel: 'me', href: 'https://hachyderm.io/@notheotherben' }],
   ],
 
   extendsMarkdown(md, app) {
