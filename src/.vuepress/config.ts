@@ -62,6 +62,10 @@ export default defineUserConfig({
   async onPrepared(app) {
     const posts = app.pages
         .filter(page => page.filePathRelative?.startsWith("posts/") && page.filePathRelative !== "posts/README.md")
+        .map(page => ({
+          ...page,
+          excerpt: page.contentRendered.includes("<!-- more -->") ? page.contentRendered.split("<!-- more -->")[0] : null
+        }))
         .filter(page => !!page.excerpt)
 
     posts.sort((a, b) => b.filePathRelative! > a.filePathRelative! ? 1 : -1)
