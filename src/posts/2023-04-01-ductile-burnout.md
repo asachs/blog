@@ -218,6 +218,14 @@ need to work with the person to identify the source of these stressors and then
 support them in making changes to their role, responsibilities, or environment to
 remove or reduce them.
 
+::: tip
+Permanent deformation is essentially the point at which a person starts to remember/recall
+prior stressors whenever they are exposed to a lesser stressor. For example, a team who
+knows that a particular partner team has previously been abusive will consistently
+experience a higher level of stress when working with that partner team, even if the
+partner team is being more reasonable than usual.
+:::
+
 ### Ultimate Strength
 As you proceed to increase the stress applied to a material, you'll notice (even in
 the plastic deformation region) that the amount of stress required to increase strain
@@ -234,7 +242,7 @@ increase even as we lower the amount of stress applied. For these individuals, t
 rapid decline which will often result in them leaving the organization (and often with strong
 negative feelings towards the organization in the process).
 
-:::danger::
+:::danger
 Many of us mistake our ultimate strength for our yield stress. If you're pushing yourself
 beyond the signs of burnout and finding that taking a break doesn't leave you feeling recovered,
 you should seriously consider whether you are making the same mistake and take appropriate steps
