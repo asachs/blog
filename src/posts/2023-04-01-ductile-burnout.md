@@ -88,7 +88,11 @@ one, or multiple, of these symptoms:
  plastic deformation as a metaphor for how burnout impacts people and why
  what may work to alleviate it for some may not work for others.
 
-![A chart showing the Young's modulus of a ductile material](https://cdn.sierrasoftworks.com/blog/youngs_modulus.svg)
+<Figure src="https://cdn.sierrasoftworks.com/blog/youngs_modulus.svg" alt="A chart showing the Young's modulus of a ductile material">
+
+The Young modulus of a ductile material as stress is increased, original from [Wikipedia](https://commons.wikimedia.org/wiki/File:Stress_strain_ductile.svg)
+
+</Figure>
 
 ### Elastic Deformation
 Switching back to our material science metaphor, elastic deformation is defined
