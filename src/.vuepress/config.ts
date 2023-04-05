@@ -57,6 +57,8 @@ export default defineUserConfig({
 
     page.headers = fixedHeaders
     page.frontmatter.layout = page.frontmatter.layout || (page.filePathRelative?.startsWith("posts/") ? "BlogPost" : "Layout")
+    page.frontmatter.head = page.frontmatter.head || []
+    page.frontmatter.head.push(['link', { rel: 'canonical', href: `https://sierrasoftworks.com${page.permalink || page.pathInferred || page.path}` }])
   },
 
   async onPrepared(app) {
