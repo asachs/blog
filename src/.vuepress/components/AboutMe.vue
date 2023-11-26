@@ -1,12 +1,15 @@
 <template>
   <div class="about-me">
-    <img
-      class="about-me__icon"
-      width="100"
-      height="100"
-      src="https://cv.sierrasoftworks.com/resources/avatar.jpg"
-      alt="A picture of Benjamin Pannell"
-    />
+    <picture>
+      <source srcset="https://benjamin.pannell.dev/assets/avatar.webp" type="image/webp"/>
+      <img
+        class="about-me__icon"
+        width="100"
+        height="100"
+        src="https://benjamin.pannell.dev/assets/avatar.jpg"
+        alt="A picture of Benjamin Pannell"
+      />
+    </picture>
     <p class="about-me__name">Benjamin Pannell</p>
     <p class="about-me__role">Site Reliability Engineer, Microsoft</p>
     <p class="about-me__location">Dublin, Ireland</p>
