@@ -1,0 +1,17 @@
+/**
+ * Custom palette here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/zh/config/#palette-styl
+ */
+
+:root {
+    --c-brand: #0F5A80;
+    --c-brand-light: #0F5A80;
+    --c-brand-dark: #0F5A80;
+}
+
+html.dark {
+    --c-brand: #1FB3FF;
+    --c-brand-light: #6BCEFF;
+    --c-brand-dark: #0F5A80;
+}

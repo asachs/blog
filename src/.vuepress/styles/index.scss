@@ -1,0 +1,26 @@
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+.navbar {
+  .site-name {
+    font-weight: lighter;
+  }
+}
+
+.page-meta,
+.page-nav,
+.page .theme-default-content {
+  max-width: 960px;
+}
+
+blockquote {
+  border-left: 4px solid var(--c-border);
+  padding: 1rem 2rem;
+  margin-left: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}
