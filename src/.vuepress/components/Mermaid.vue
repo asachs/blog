@@ -6,13 +6,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, toRef, watch, computed } from 'vue'
-import mermaid from 'mermaid/dist/mermaid.esm.min'
+import { defineComponent, ref, toRef, watch } from 'vue'
+import mermaid from "mermaid/dist/mermaid.esm.min.mjs"
 
 mermaid.initialize({
+    startOnLoad: true,
     theme: 'dark',
     flowchart: {
-        width: "100%"
+        useMaxWidth: true
     },
     sequence: {
         showSequenceNumbers: true
@@ -28,16 +29,18 @@ export default defineComponent({
         const id = Math.floor(Math.random() * 1e6)
         const value = toRef(props, "value")
         const caption = toRef(props, "caption")
-        const rendered = ref(null)
+        const rendered = ref("")
         watch(value, newValue => {
-            try
-            {
-                mermaid.render(`mermaid-${id}`, newValue, (svg) => {
-                    rendered.value = svg
-                })
-            } catch(err) {
-                throw new Error("Mermaid cannot be used in SSR mode, ensure that it is wrapped in <ClientOnly> tags.")
+            if (!newValue) {
+                return
             }
+
+            mermaid.render(`mermaid-${id}`, newValue).then(svg => {
+                rendered.value = svg.svg
+            }).catch(err => {
+                console.error(err)
+                throw new Error("Mermaid cannot be used in SSR mode, ensure that it is wrapped in <ClientOnly> tags.")
+            })
         }, {
             immediate: true
         })
