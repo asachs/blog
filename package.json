@@ -18,7 +18,7 @@
     "@vuepress/plugin-register-components": "2.0.0-rc.0",
     "@vuepress/theme-default": "2.0.0-rc.0",
     "dayjs": "^1.11.10",
-    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^3.0.3",
     "mermaid": "^10.6.1",
     "vuepress-vite": "2.0.0-rc.0"
