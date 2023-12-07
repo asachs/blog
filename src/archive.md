@@ -11,18 +11,7 @@ editLink: false
 
 <h3 class="year-title">{{ year.year }}</h3>
 
-<div class="archive-post" v-for="post in year.posts">
-
-<h4 class="archive-post__title">
-<a :href="post.path">{{ post.frontmatter.title }}</a>
-</h4>
-
-<div class="archive-post__metadata">
-<DateTime class="archive-post__date" :time="post.frontmatter.date" format="YYYY-MM-DD" />
-<span class="tag" v-for="tag in (post.frontmatter?.tags || [])">#{{ tag }}</span>
-</div>
-
-</div>
+<PostList :posts="year.posts" />
 
 </div>
 
@@ -59,6 +48,8 @@ export default {
             return yearsList
         })
 
+
+
         return {
             search,
             years
@@ -85,7 +76,7 @@ export default {
     }
 
     input.search-box:focus {
-        border-bottom: 2px solid #1FB3FF;
+        border-bottom: 2px solid var(--c-brand);
         outline: none;
     }
 
@@ -94,32 +85,6 @@ export default {
         margin-top: 3rem;
         padding-bottom: 0.5rem;
         border-bottom: 1px solid rgba(180, 180, 180, 0.3);
-    }
-
-    .tag {
-        font-size: 0.9rem;
-        font-weight: bold;
-        margin: 0 5px;
-    }
-
-    .archive-post {
-        margin-left: 4rem;
-    }
-
-    .archive-post__title {
-        margin-bottom: 0;
-    }
-
-    .archive-post__title a {
-        color: var(--c-text);
-    }
-
-    .archive-post__metadata {
-
-    }
-
-    .archive-post__date {
-        font-size: 0.9rem;
-        opacity: 0.7;
+        color: var(--c-brand-light);
     }
 </style>

@@ -15,7 +15,7 @@ actions:
       link: /archive/
       type: secondary
 
-footer: Copyright © Sierra Softworks 2021
+footer: Copyright © Sierra Softworks 2023
 ---
 
 
@@ -23,16 +23,7 @@ footer: Copyright © Sierra Softworks 2021
 
 ## Latest Posts
 
-<div class="latest-post" v-for="post in latestPosts">
-    <div class="latest-post__excerpt" v-html="post.excerpt"></div>
-    <div class="latest-post__metadata">
-        <DateTime class="latest-post__date" :time="post.frontmatter.date" format="YYYY-MM-DD" />
-        <span class="tag" v-for="tag in (post.frontmatter?.tags || [])">#{{ tag }}</span>
-    </div>
-
-
-<a :href="post.path">Keep Reading &rarr;</a>
-</div>
+<PostList :posts="latestPosts" />
 </div>
 
 <script lang="ts">
@@ -51,22 +42,4 @@ export default defineComponent({
 </script>
 
 <style>
-    .latest-post__excerpt h1 {
-        font-size: 1.4rem;
-    }
-
-    .latest-post__metadata {
-
-    }
-
-    .latest-post__date {
-        font-size: 0.9rem;
-        opacity: 0.7;
-    }
-
-    .tag {
-        font-size: 0.9rem;
-        font-weight: bold;
-        margin: 0 5px;
-    }
 </style>
