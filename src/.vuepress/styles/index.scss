@@ -75,3 +75,7 @@ a.action-button {
     transition-property: left;
   }
 }
+
+div[class*="language-ascii"] pre[class*="language-ascii"] {
+  line-height: 1em;
+}
