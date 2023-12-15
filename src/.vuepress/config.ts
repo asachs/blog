@@ -2,9 +2,11 @@ import {defineUserConfig} from 'vuepress-vite'
 import type {App, Page, PageHeader} from "@vuepress/core"
 import defaultTheme from '@vuepress/theme-default'
 import {path} from '@vuepress/utils'
+import katex from 'katex/dist/katex.mjs'
 
 import mitfootnote from "markdown-it-footnote"
 import mitabbr from "markdown-it-abbr"
+import mittexmath from "markdown-it-texmath"
 
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics"
 import {registerComponentsPlugin} from "@vuepress/plugin-register-components"
@@ -34,6 +36,13 @@ export default defineUserConfig({
     md
       .use(mitfootnote)
       .use(mitabbr)
+      .use(mittexmath, {
+        engine: katex,
+        delimiters: 'dollars',
+        katexOptions: {
+          output: 'html'
+        }
+      })
       .use((md) => {
         const original = md.renderer.rules.fence!
         md.renderer.rules.fence = (tokens, idx, options, ...resParams) => {

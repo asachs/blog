@@ -22,5 +22,9 @@
     "markdown-it-footnote": "^4.0.0",
     "mermaid": "^10.6.1",
     "vuepress-vite": "2.0.0-rc.0"
+  },
+  "dependencies": {
+    "katex": "^0.16.9",
+    "markdown-it-texmath": "^1.0.0"
   }
 }
