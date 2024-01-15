@@ -20,7 +20,7 @@
     "dayjs": "^1.11.10",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "mermaid": "^10.6.1",
+    "mermaid": "^10.7.0",
     "vuepress-vite": "2.0.0-rc.0"
   },
   "dependencies": {
