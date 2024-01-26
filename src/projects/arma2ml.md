@@ -16,6 +16,8 @@ ArmA 2 Mod Launcher is a command-line based application which enables you to qui
 ArmA 2 with a custom selection of mods. Its lightweight nature and easy to use command
 line syntax makes creating shortcuts for your favourite mod configurations dead easy.
 
+<!-- more -->
+
  * **Load Your Favourite Mods And Join Your Favourite Server From A Single Shortcut**
     
     ArmA 2 Mod Launcher allows you to easily construct shortcuts which launch ArmA 2 with
@@ -38,8 +40,6 @@ line syntax makes creating shortcuts for your favourite mod configurations dead 
 
 [View on GitHub](https://github.com/SierraSoftworks/arma2ml)
 :::
-
-<!-- more -->
 
 ## Usage
 

@@ -21,6 +21,8 @@ its biggest advantages is that you no longer need to think about where your
 development directory is on different devices. Just `gt o my-repo` and you're
 ready to start developing, even if the code wasn't already cloned.
 
+<!-- more -->
+
 ## Features
 
 - **Quickly open repositories** whether they are already cloned locally or not, using your favourite Git services and a concise folder structure.
@@ -28,8 +30,6 @@ ready to start developing, even if the code wasn't already cloned.
 - **Weekly scratchpads** to help organize random work and doodles with minimal effort.
 - **Aliases** to make opening your most common repositories as quick as possible.
 - **Fast autocompletion** on all platforms with support for "sequence search" (`ssgt` matches `SierraSoftworks/git-tool`) as found in Sublime and VSCode.
-
-<!-- more -->
 
 ## Example
 

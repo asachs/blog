@@ -17,6 +17,8 @@ and tools for a project. Rather than port the scripts to something like Go or Py
 or merge them into a single bash script, we opted to build a framework which allows
 and executable to be presented as a sub-command.
 
+<!-- more -->
+
 ## Example
 
 ```sh

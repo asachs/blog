@@ -12,16 +12,15 @@ download: https://cdn.sierrasoftworks.com/wkd/WKDSetup.exe
 ---
 
 # Web Comic Downloader
-WKD is a web comic downloader which allows you to easily download a large number of comics automatically. It makes use of XPath queries to locate images, similarly to the way your web browser does. This allows it to download images which are not named sequentially (1, 2, 3...) without any problems.
- 
+WKD is a web comic downloader which allows you to easily download a large number of comics automatically. It makes use of XPath queries to locate images, similarly to the way your web browser does. This allows it to download images which are not named sequentially (1, 2, 3...) without any problems. 
+
+<!-- more -->
 
 ::: tip
 [Download WKD](https://cdn.sierrasoftworks.com/wkd/WKDSetup.exe)
 
 [View on GitHub](https://github.com/SierraSoftworks/web-comic-downloader)
 :::
-
-<!-- more -->
 
 ## Why make WKD?
 I am one of many people who routinely reads web comics, alas I get to the stage where I am not willing to click through each of the 700 strips in a comic. It is just so much easier to browse it on your hard drive, where it loads immediately and can be traversed quickly using thumbnails.  

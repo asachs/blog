@@ -73,7 +73,8 @@ export default defineUserConfig({
   },
 
   async onPrepared(app) {
-    await buildPageCache(app, "posts", "posts/")
+    await buildPageCache(app, "posts", "posts/", { reverse: true })
+    await buildPageCache(app, "projects", "projects/")
     await buildPageCache(app, "licenses", "licenses/")
   },
 

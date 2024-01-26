@@ -17,13 +17,13 @@ download: https://cdn.sierrasoftworks.com/coremonitor/CoreMonitorSetup.exe
 # CoreMonitor
 Easily monitor your system's resource usage using our powerful replacement for the default Logitech G15/G19 resource monitor widget.
 
+<!-- more -->
+
 ::: tip
 [Download CoreMonitor](https://cdn.sierrasoftworks.com/coremonitor/CoreMonitorSetup.exe)
 
 [View on GitHub](https://github.com/SierraSoftworks/coremonitor)
 :::
-
-<!-- more -->
 
 ## Features
 ### Graphed CPU Usage

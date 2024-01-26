@@ -5,14 +5,16 @@ comments: false
 editLink: false
 ---
 
-<Index prefix="projects" />
+<PostList :posts="projects" />
 
 <script>
-import Index from "../../../components/Index.vue"
+import {projects} from "@temp/projects"
 
 export default {
-    components: {
-        Index
+    setup() {
+        return {
+            projects
+        }
     }
 }
 </script>

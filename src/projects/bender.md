@@ -16,6 +16,8 @@ Bender is a small API which allows you to run a BaaS stack (Bender as a Service)
 for those times you really wish you could tell a web app to bite your shiny metal
 ass.
 
+<!-- more -->
+
 ::: tip
 You can go directly to [Bender](https://bender.sierrasoftworks.com/api/v1/quote)
 and get your dose of Futurama if you're more interested in that than the API docs.
