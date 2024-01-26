@@ -43,13 +43,11 @@
 import { defineComponent, computed } from "vue";
 import { usePageFrontmatter } from '@vuepress/client'
 import BaseLayout from "@vuepress/theme-default/layouts/Layout.vue"
-import Button from "../components/Button.vue"
 
 export default defineComponent({
     name: "GitHubProject",
     components: {
         BaseLayout,
-        Button,
     },
     setup() {
       const frontmatter = usePageFrontmatter()

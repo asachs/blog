@@ -1,5 +1,5 @@
-import {defineUserConfig} from 'vuepress-vite'
-import type {App, Page, PageHeader} from "@vuepress/core"
+import {defineUserConfig, PageHeader} from 'vuepress'
+import {viteBundler} from '@vuepress/bundler-vite'
 import defaultTheme from '@vuepress/theme-default'
 import {path} from '@vuepress/utils'
 import katex from 'katex/dist/katex.mjs'
@@ -31,6 +31,8 @@ export default defineUserConfig({
     ['link', { rel: 'me', href: 'https://mastodon.online/@notheotherben' }],
     ['link', { rel: 'me', href: 'https://hachyderm.io/@notheotherben' }],
   ],
+
+  bundler: viteBundler(),
 
   extendsMarkdown(md, app) {
     md

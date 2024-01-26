@@ -28,12 +28,12 @@
 import { defineComponent, computed } from "vue";
 import { usePageFrontmatter } from "@vuepress/client";
 import BaseLayout from "@vuepress/theme-default/layouts/Layout.vue";
-import AboutMe from "../components/AboutMe.vue";
+//import AboutMe from "../components/AboutMe.vue";
 
 export default defineComponent({
   name: "BlogPost",
   components: {
-    AboutMe,
+    //AboutMe,
     BaseLayout,
   },
   setup() {
