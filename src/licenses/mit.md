@@ -6,8 +6,6 @@ comments: false
 ---
 
 # The MIT License
-
-## Overview
 The following is a brief summary of what this license allows, requires and disallows. It does not supersede
 the content of the license itself and is not a substitute for understanding the license.
 

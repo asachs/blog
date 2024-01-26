@@ -1,6 +1,9 @@
 <template>
     <div class="posts-list">
         <div class="post" v-for="post in posts" @click="router.push(post.path)">
+            <h3 class="post__title">
+                {{ post.title }}
+            </h3>
 
             <div class="post__excerpt" v-html="post.excerpt"></div>
 
@@ -50,6 +53,8 @@ export default {
     }
 
     .posts-list .post__title {
+        margin-top: 2rem;
+        padding-top: 0;
         margin-bottom: 0;
     }
 

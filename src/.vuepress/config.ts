@@ -10,6 +10,7 @@ import mittexmath from "markdown-it-texmath"
 
 import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics"
 import {registerComponentsPlugin} from "@vuepress/plugin-register-components"
+import { buildPageCache } from './utils/pageCache'
 
 function htmlDecode(input: string): string {
   return input.replace("&#39;", "'").replace("&amp;", "&").replace("&quot;", '"')
@@ -72,17 +73,8 @@ export default defineUserConfig({
   },
 
   async onPrepared(app) {
-    const posts = app.pages
-        .filter(page => page.filePathRelative?.startsWith("posts/") && page.filePathRelative !== "posts/README.md")
-        .map(page => ({
-          ...page,
-          excerpt: page.contentRendered.includes("<!-- more -->") ? page.contentRendered.split("<!-- more -->")[0] : null
-        }))
-        .filter(page => !!page.excerpt)
-
-    posts.sort((a, b) => b.filePathRelative! > a.filePathRelative! ? 1 : -1)
-    
-    await app.writeTemp("posts.js", `export const posts = ${JSON.stringify(posts)}`)
+    await buildPageCache(app, "posts", "posts/")
+    await buildPageCache(app, "licenses", "licenses/")
   },
 
   theme: defaultTheme({

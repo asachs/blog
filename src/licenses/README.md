@@ -5,21 +5,21 @@ comments: false
 editLink: false
 ---
 
-::: tip
 Sierra Softworks applies a couple of difference licenses to the software we release
 depending on its intended audience and use case. We strive to release much of our
 software under the very permissive MIT license whenever possible.
-:::
 
 
-<Index prefix="licenses" />
+<PostList :posts="licenses" />
 
 <script>
-import Index from "../../../components/Index.vue"
+import {licenses} from "@temp/licenses"
 
 export default {
-    components: {
-        Index
+    setup() {
+        return {
+            licenses
+        }
     }
 }
 </script>
