@@ -80,14 +80,15 @@ export default defineUserConfig({
           {
             text: "Services",
             children: [
-              "/projects/bender.md"
+              "/projects/bender.md",
+              "/projects/tailservice.md"
             ]
           },
           {
             text: "Tooling",
             children: [
               "/projects/git-tool.md",
-              "/projects/minback.md",
+              "/projects/minback.md"
             ]
           },
           {
