@@ -11,7 +11,7 @@ import mittexmath from "markdown-it-texmath"
 import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics"
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components"
 import { buildPageCache } from './utils/pageCache'
-import { htmlDecode, fixPageHeader, mermaidCodeFencePlugin } from './utils/formatting'
+import { fixPageHeader, mermaidCodeFencePlugin } from './utils/formatting'
 
 export default defineUserConfig({
   lang: 'en-GB',
