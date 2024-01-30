@@ -1,25 +1,17 @@
-import {defineUserConfig, PageHeader} from 'vuepress'
-import {viteBundler} from '@vuepress/bundler-vite'
+import { defineUserConfig, PageHeader } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 import defaultTheme from '@vuepress/theme-default'
-import {path} from '@vuepress/utils'
+import { path } from '@vuepress/utils'
 import katex from 'katex/dist/katex.mjs'
 
 import mitfootnote from "markdown-it-footnote"
 import mitabbr from "markdown-it-abbr"
 import mittexmath from "markdown-it-texmath"
 
-import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics"
-import {registerComponentsPlugin} from "@vuepress/plugin-register-components"
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics"
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components"
 import { buildPageCache } from './utils/pageCache'
-
-function htmlDecode(input: string): string {
-  return input.replace("&#39;", "'").replace("&amp;", "&").replace("&quot;", '"')
-}
-
-function fixPageHeader(header: PageHeader) {
-  header.title = htmlDecode(header.title)
-  header.children.forEach(child => fixPageHeader(child))
-}
+import { htmlDecode, fixPageHeader, mermaidCodeFencePlugin } from './utils/formatting'
 
 export default defineUserConfig({
   lang: 'en-GB',
@@ -46,20 +38,7 @@ export default defineUserConfig({
           output: 'html'
         }
       })
-      .use((md) => {
-        const original = md.renderer.rules.fence!
-        md.renderer.rules.fence = (tokens, idx, options, ...resParams) => {
-          const token = tokens[idx]
-          const code = token.content.trim()
-          if (token.info.startsWith('mermaid')) {
-            const safeCaption = token.info.slice('mermaid'.length+1).replace(/"/g, '&quot;')
-            const safeCode = JSON.stringify(code).replace(/"/g, "&quot;")
-            return `<ClientOnly><Mermaid :value="${safeCode}" caption="${safeCaption}" /></ClientOnly>`
-          }
-
-          return original(tokens, idx, options, ...resParams)
-        }
-      })
+      .use(mermaidCodeFencePlugin)
   },
 
   extendsPage(page, app) {
