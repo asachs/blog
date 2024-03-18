@@ -19,6 +19,7 @@
 <script lang="ts">
 import {} from 'vue'
 import {useRouter} from 'vue-router'
+import { PageCacheEntry } from '../utils/pageCache';
 
 export default {
     props: {
@@ -29,7 +30,7 @@ export default {
     },
     setup(props) {
         return {
-            posts: props.posts,
+            posts: props.posts as PageCacheEntry[],
             router: useRouter()
         }
     }
@@ -60,10 +61,6 @@ export default {
 
     .posts-list .post__title a {
         color: var(--c-text);
-    }
-
-    .posts-list .post__metadata {
-
     }
 
     .posts-list .post__excerpt .header-anchor {
