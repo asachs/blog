@@ -6,6 +6,18 @@ interface BuildPageCacheOptions {
   requireExcerpt?: boolean
 }
 
+export interface PageCacheEntry {
+  title: string
+  path: string
+  permalink: string
+  filePathRelative: string
+  frontmatter: Record<string, any>
+  slug: string
+  date: string
+
+  excerpt: string | null
+}
+
 const defaultBuildPageCacheOptions: BuildPageCacheOptions = {
   reverse: false,
   includeReadme: false,
@@ -22,7 +34,14 @@ export async function buildPageCache(app: App, name: string, prefix: string, opt
     .filter(page => page.filePathRelative?.startsWith(prefix))
     .filter(page => options.includeReadme || page.filePathRelative !== `${prefix}/README.md`)
     .map(page => ({
-      ...page,
+      title: page.title,
+      path: page.path,
+      permalink: page.permalink,
+      filePathRelative: page.filePathRelative,
+      frontmatter: page.frontmatter,
+      slug: page.slug,
+      date: page.date,
+
       excerpt: page.contentRendered.includes("<!-- more -->") ? page.contentRendered.split("<!-- more -->")[0] : null
     }))
     .filter(page => !options.requireExcerpt || !!page.excerpt)
