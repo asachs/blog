@@ -3,6 +3,9 @@ title: Blog Posts
 description: Here are some recent blog posts I've written.
 sidebar: false
 editLink: false
+sitemap:
+    changefreq: daily
+    priority: 0.7
 ---
 
 <script>

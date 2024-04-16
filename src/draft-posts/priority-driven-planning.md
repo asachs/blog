@@ -5,6 +5,7 @@ description: |
     run a portion of our development team for the last 9 months and it's been an
     amazing success, I'd like to tell you a little bit about it and how it works.
 date: 2022-01-26T00:00:00Z
+sitemap: false
 
 permalinkPattern: :year/:month/:day/:slug
 categories:

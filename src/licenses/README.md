@@ -3,6 +3,9 @@ title: Licenses
 sidebar: false
 comments: false
 editLink: false
+sitemap:
+    changefreq: monthly
+    priority: 0.3
 ---
 
 Sierra Softworks applies a couple of difference licenses to the software we release

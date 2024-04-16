@@ -4,6 +4,7 @@ categories: ["operations", "business", "theory"]
 comments: true
 date: 2018-04-07 19:35:00
 draft: true
+sitemap: false
 tags: ["operations", "business", "theory"]
 ---
 

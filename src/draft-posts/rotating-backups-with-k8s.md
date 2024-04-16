@@ -2,6 +2,7 @@
 title: Rotating Backups with Kubernetes
 date: 2017-12-24 19:25:10
 draft: true
+sitemap: false
 tags:
     - kubernetes
     - operations

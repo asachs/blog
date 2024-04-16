@@ -16,6 +16,9 @@ actions:
       type: secondary
 
 footer: Copyright © Sierra Softworks 2023
+sitemap:
+    changefreq: daily
+    priority: 1.0
 ---
 
 

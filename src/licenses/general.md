@@ -3,6 +3,9 @@ title: Sierra Softworks License
 group: Commercial
 permalinkPattern: /licenses/:slug/
 comments: false
+sitemap:
+    changefreq: monthly
+    priority: 0.3
 ---
 
 # Sierra Softworks License

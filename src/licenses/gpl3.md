@@ -3,6 +3,9 @@ title: GNU General Public License v3.0
 group: Open Source
 permalinkPattern: /licenses/:slug/
 comments: false
+sitemap:
+    changefreq: monthly
+    priority: 0.3
 ---
 
 # GNU General Public License v3.0

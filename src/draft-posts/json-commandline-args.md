@@ -6,6 +6,7 @@ description: |
     In this post, I'll show you some of the nightmares you might encounter and how to
     work around them.
 date: 2022-01-25T00:00:00.000Z
+sitemap: false
 
 permalinkPattern: :year/:month/:day/:slug
 categories:

@@ -11,6 +11,9 @@ import mittexmath from "markdown-it-texmath"
 import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics"
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components"
 import { feedPlugin } from "@vuepress/plugin-feed";
+import { seoPlugin } from '@vuepress/plugin-seo'
+import { sitemapPlugin } from '@vuepress/plugin-sitemap'
+
 import { buildPageCache } from './utils/pageCache'
 import { fixPageHeader, mermaidCodeFencePlugin } from './utils/formatting'
 
@@ -116,7 +119,7 @@ export default defineUserConfig({
           {
             text: "Open Source",
             children: [
-              "/licenses/MIT.md",
+              "/licenses/mit.md",
               "/licenses/gpl3.md",
             ]
           },
@@ -139,6 +142,24 @@ export default defineUserConfig({
     googleAnalyticsPlugin({ id: "G-WJQ1PVYVH0" }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
+    }),
+    seoPlugin({
+      hostname: "https://sierrasoftworks.com",
+      author: {
+        name: "Benjamin Pannell",
+        url: "https://benjamin.pannell.dev"
+      },
+      isArticle(page) {
+        return page.filePathRelative?.startsWith("posts/") || page.filePathRelative?.startsWith("projects/") || false
+      },
+    }),
+    sitemapPlugin({
+      hostname: "https://sierrasoftworks.com",
+      devServer: true,
+      excludePaths: [
+        "/404.html",
+      ],
+      changefreq: "monthly",
     }),
     feedPlugin({
       hostname: "https://sierrasoftworks.com",

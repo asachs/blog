@@ -4,6 +4,7 @@ date: 2018-09-15T17:41:49+00:00
 categories: ["development", "patterns"]
 tags: ["development", "patterns"]
 draft: true
+sitemap: false
 comments: false
 ---
 

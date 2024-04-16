@@ -6,6 +6,7 @@ tags:
     - business
     - theory
 draft: true
+sitemap: false
 ---
 
 Recently I wrote a blog post on how to execute scheduled backups using

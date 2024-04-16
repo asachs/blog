@@ -6,6 +6,7 @@ categories:
 tags: 
   - development
 comments: true
+sitemap: false
 draft: true
 ---
 

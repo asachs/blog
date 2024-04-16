@@ -3,6 +3,9 @@ title: Projects
 sidebar: false
 comments: false
 editLink: false
+sitemap:
+    changefreq: daily
+    priority: 0.7
 ---
 
 <PostList :posts="projects" />

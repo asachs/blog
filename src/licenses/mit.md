@@ -3,6 +3,9 @@ title: The MIT License (MIT)
 group: Open Source
 permalinkPattern: /licenses/:slug/
 comments: false
+sitemap:
+    changefreq: monthly
+    priority: 0.3
 ---
 
 # The MIT License

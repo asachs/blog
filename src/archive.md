@@ -3,6 +3,9 @@ title: Archive
 permalink: /archive/
 sidebar: false
 editLink: false
+sitemap:
+    changefreq: daily
+    priority: 0.7
 ---
 
 <input class="search-box" type="text" v-model="search" placeholder="Search...">
