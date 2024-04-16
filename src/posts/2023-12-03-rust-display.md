@@ -9,7 +9,7 @@ description: |
     in Rust, and how you can use that to make debugging your code easier.
 
 date: 2023-12-03T00:00:00.000Z
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
   - development
   - advent-of-code

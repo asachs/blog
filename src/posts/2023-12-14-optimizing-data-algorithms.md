@@ -9,7 +9,7 @@ description: |
     practical performance on data-intensive problems in Rust.
 
 date: 2023-12-14T00:00:00.000Z
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
   - development
   - advent-of-code

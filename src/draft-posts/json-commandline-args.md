@@ -8,7 +8,7 @@ description: |
 date: 2022-01-25T00:00:00.000Z
 sitemap: false
 
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
     - development
     - powershell

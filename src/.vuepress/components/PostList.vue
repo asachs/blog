@@ -1,6 +1,6 @@
 <template>
     <div class="posts-list">
-        <div class="post" v-for="post in posts" @click="router.push(post.path)">
+        <div class="post" v-for="post in posts" @click="router.push(post.permalink || post.path)">
             <h3 class="post__title">
                 {{ post.title }}
             </h3>
@@ -10,7 +10,7 @@
             <div class="post__metadata">
             <DateTime class="post__date" :time="post.frontmatter.date" format="YYYY-MM-DD" />
             <span class="post__tag" v-for="tag in (post.frontmatter?.tags || [])">#{{ tag }}</span>
-            <a class="post__keep-reading" :href="post.path">Keep Reading &rarr;</a>
+            <a class="post__keep-reading" :href="post.permalink || post.path">Keep Reading &rarr;</a>
             </div>
         </div>
     </div>

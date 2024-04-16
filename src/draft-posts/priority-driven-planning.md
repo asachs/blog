@@ -7,7 +7,7 @@ description: |
 date: 2022-01-26T00:00:00Z
 sitemap: false
 
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
     - planning
     - development

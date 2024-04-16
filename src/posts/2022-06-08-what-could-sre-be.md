@@ -5,7 +5,7 @@ description: |
     development environment.
 date: 2022-06-08T00:00:00.000Z
 
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
     - sre
     - theory

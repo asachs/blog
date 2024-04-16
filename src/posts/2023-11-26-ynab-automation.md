@@ -6,7 +6,7 @@ description: |
     set it up yourself.
 
 date: 2023-11-26T00:00:00.000Z
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
   - finance
   - home-automation

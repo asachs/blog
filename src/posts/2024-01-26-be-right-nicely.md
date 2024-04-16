@@ -11,7 +11,7 @@ description: |
     your reaction to being right is when building a team culture.
 
 date: 2024-01-26T00:00:00.000Z
-permalinkPattern: :year/:month/:day/:slug
+permalinkPattern: :year/:month/:day/:slug/
 categories:
     - development
     - leadership

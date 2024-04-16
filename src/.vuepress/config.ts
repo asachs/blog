@@ -79,6 +79,12 @@ export default defineUserConfig({
     navbar: [
       '/archive.md',
       {
+        text: "Posts",
+        children: [
+          "/posts/2024-01-26-be-right-nicely.md",
+        ]
+      },
+      {
         text: "Projects",
         children: [
           {
@@ -155,7 +161,6 @@ export default defineUserConfig({
     }),
     sitemapPlugin({
       hostname: "https://sierrasoftworks.com",
-      devServer: true,
       excludePaths: [
         "/404.html",
       ],
@@ -164,7 +169,6 @@ export default defineUserConfig({
     feedPlugin({
       hostname: "https://sierrasoftworks.com",
       atom: true,
-      devServer: true,
       rss: true,
       channel: {
         copyright: `Copyright © ${new Date().getUTCFullYear()} Sierra Softworks`,
