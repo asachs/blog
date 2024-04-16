@@ -1,0 +1,26 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:admin@sierrasoftworks.com
+Expires: 2030-01-01T00:00:00.000Z
+Encryption: https://keybase.io/spartan563/pgp_keys.asc
+Preferred-Languages: en
+Canonical: https://sierrasoftworks.com/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+wsFcBAABCgAGBQJmHwafAAoJELgIwWo/dLLEWcIP/14TSmlGTOUsn9QLeH/qJnRz
+4qvFGCoF0Uy1uIKLcV8x9tADGhQ2ZnmkplBzU2Y3NeupWa0uq7Le5bC4x3EeRFRB
+s2yYWbzt9eqYfNB5xJpEeaMR66PmvTL7YzDrpQrVxMs8kmU5zpR2rHkUsG93tj8v
+7gnJ6TsHrtutM2nGKYqWycsxy+Fng9AepjYwGqJxSSjrhArhkKMuV0KEWASNASJo
+qXIjcqY00wochLWU4hCtQgYxZ44CMZaX4c8HhiantZ87K+8phOocpRHpBmfDmNqL
+qsQ9tPHuaoiNDSqFRHMZsH/SqnVJJxoGOXqiY9pA3IHwM7TtXfRx1dibW5/ZQZ8x
+UejF8sECtk/E+wzHlpIjMoR9QNeoy74HVkqgpUwRH5jUfyCAFwkJHPltptLtBS/I
+wKhsiPE2dHLvVXX8y8jXdvsmjRT1Z2TFEJh4psDdO/g4VKd8WM9K/WPNt2u79rNh
+DCqpxiDvRMQMDcsyXz9NTIR9CFfWScjsVtITxpA5i+R96vql6citIpmK7KCIi6PJ
+8EmmJuWPH+qtnJaMYEMrBKpvSGn55KRX+Kme/CGnMIGZdC7NZjP8Zi7ezfp+LGv3
+pLflrNjA5vi0a4HdWB3nJguEOca6VCebrOmlOZvY8fsRIWI+UMiryswKdasS1wir
+rHSRZzVqHpn2GYQBNBh3
+=0u2S
+-----END PGP SIGNATURE-----
