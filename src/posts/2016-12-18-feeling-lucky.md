@@ -6,7 +6,7 @@ tags:
 - development
 - shits-and-giggles
 categories:
-- Development
+- development
 
 ---
 # Feeling Lucky

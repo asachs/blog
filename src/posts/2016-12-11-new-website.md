@@ -3,7 +3,7 @@ title: New Website
 date: 2016-12-11T22:36:47Z
 permalinkPattern: :year/:month/:day/:slug/
 categories:
-  - Web Development
+  - web
 tags:
   - web
   - projects

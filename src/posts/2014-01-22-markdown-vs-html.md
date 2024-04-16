@@ -5,7 +5,7 @@ permalinkPattern: :year/:month/:day/:slug/
 tags: 
     - web
 categories:
-    - Web Development
+    - web
 ---
 
 # Markdown or HTML?

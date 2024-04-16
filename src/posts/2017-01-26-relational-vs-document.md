@@ -8,8 +8,8 @@ tags:
     - mongodb
     - mysql
 categories:
-    - Development
-    - Architecture
+    - development
+    - architecture
 ---
 
 # Relational and Document DBs

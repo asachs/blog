@@ -1,6 +1,6 @@
 import { defineUserConfig, PageHeader } from 'vuepress'
 import { viteBundler } from '@vuepress/bundler-vite'
-import defaultTheme from '@vuepress/theme-default'
+import { defaultTheme } from '@vuepress/theme-default'
 import { path } from '@vuepress/utils'
 import katex from 'katex/dist/katex.mjs'
 
@@ -10,6 +10,7 @@ import mittexmath from "markdown-it-texmath"
 
 import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics"
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components"
+import { feedPlugin } from "@vuepress/plugin-feed";
 import { buildPageCache } from './utils/pageCache'
 import { fixPageHeader, mermaidCodeFencePlugin } from './utils/formatting'
 
@@ -138,6 +139,28 @@ export default defineUserConfig({
     googleAnalyticsPlugin({ id: "G-WJQ1PVYVH0" }),
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
+    }),
+    feedPlugin({
+      hostname: "https://sierrasoftworks.com",
+      atom: true,
+      devServer: true,
+      rss: true,
+      channel: {
+        copyright: `Copyright © ${new Date().getUTCFullYear()} Sierra Softworks`,
+        icon: "https://cdn.sierrasoftworks.com/logos/icon.png",
+        author: {
+          name: "Benjamin Pannell",
+          url: "https://benjamin.pannell.dev"
+        }
+      },
+      filter(page) {
+        return page.filePathRelative?.startsWith("posts/") || false
+      },
+      getter: {
+        content(page) {
+          return page.contentRendered.includes("<!-- more -->") ? page.contentRendered.split("<!-- more -->")[0] : ""
+        }
+      }
     })
   ]
 })

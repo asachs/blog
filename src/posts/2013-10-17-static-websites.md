@@ -9,7 +9,7 @@ permalinkPattern: :year/:month/:day/:slug/
 tags:
     - web
 categories:
-    - Web Development
+    - web
 ---
 
 # Do you need a dynamic website?

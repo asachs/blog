@@ -7,7 +7,7 @@ tags:
     - docker-swarm
     - ops
 categories:
-    - Operations
+    - operations
 ---
 
 # Traefik on Docker Swarm

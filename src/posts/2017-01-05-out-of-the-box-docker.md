@@ -7,7 +7,7 @@ tags:
 - ops
 - patterns
 categories:
-- Operations
+- operations
 
 ---
 # Out of the Box Docker

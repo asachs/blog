@@ -7,7 +7,7 @@ tags:
     - docker-swarm
     - ops
 categories:
-    - Operations
+    - operations
 ---
 
 # Docker Swarm

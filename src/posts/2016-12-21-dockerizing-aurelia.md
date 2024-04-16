@@ -7,7 +7,7 @@ tags:
 - web
 - aurelia
 categories:
-- Web Development
+- web
 
 ---
 
