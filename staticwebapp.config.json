@@ -1,0 +1,34 @@
+{
+    "trailingSlash": "auto",
+    "navigationFallback": {
+        "rewrite": "index.html",
+        "exclude": ["/assets/*", "/.well-known/*"]
+    },
+    "responseOverrides": {
+        "404": {
+            "rewrite": "/404.html"
+        }
+    },
+    "routes": [
+        {
+            "route": "/post/bash-cli",
+            "redirect": "/projects/bash-cli/"
+        },
+        {
+            "route": "/iridium",
+            "redirect": "https://sierrasoftworks.github.io/Iridium/"
+        },
+        {
+            "route": "/wkd",
+            "redirect": "/projects/wkd/"
+        },
+        {
+            "route": "/licenses/MIT",
+            "redirect": "/licenses/mit/"
+        },
+        {
+            "route": "/frontierjs",
+            "statusCode": 410
+        }
+    ]
+}
