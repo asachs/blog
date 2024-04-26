@@ -1,7 +1,8 @@
 /* TEAM */
 Lead Developer: Benjamin Pannell
-Site: https://ben.pannell.dev
-Twitter: @Sierra563
+Site: https://benjamin.pannell.dev
+GitHub: notheotherben
+Mastodon: notheotherben@hachyderm.io
 Location: Dublin, Ireland
 
 /* SITE */
