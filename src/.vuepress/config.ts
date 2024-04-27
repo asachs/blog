@@ -79,12 +79,6 @@ export default defineUserConfig({
     navbar: [
       '/archive.md',
       {
-        text: "Posts",
-        children: [
-          "/posts/2024-01-26-be-right-nicely.md",
-        ]
-      },
-      {
         text: "Projects",
         children: [
           {
