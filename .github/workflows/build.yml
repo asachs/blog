@@ -95,21 +95,21 @@ jobs:
           path: ./dist
 
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
           tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
           client-id: ${{ env.STAGING_DEPLOYMENT_CLIENT_ID }}
 
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
           inlineScript: |
             echo "Uploading Site Contents"
             az storage blob sync --container '${{ env.STAGING_STORAGE_CONTAINER }}' --account-name ${{ env.STAGING_STORAGE_ACCOUNT }} --source ./dist
 
       - name: Purge Azure CDN
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
           inlineScript: |
             echo "Purging CDN"
@@ -126,13 +126,13 @@ jobs:
 
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: site
           path: ./dist
 
       - name: Setup GitHub Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
@@ -141,24 +141,24 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
 
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
           tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
           client-id: ${{ env.LIVE_DEPLOYMENT_CLIENT_ID }}
 
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
           inlineScript: |
             echo "Uploading Site Contents"
             az storage blob sync --container '${{ env.LIVE_STORAGE_CONTAINER }}' --account-name ${{ env.LIVE_STORAGE_ACCOUNT }} --source ./dist
 
       - name: Purge Azure CDN
-        uses: azure/CLI@v1
+        uses: azure/CLI@v2
         with:
           inlineScript: |
             echo "Purging CDN"
