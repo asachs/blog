@@ -10,23 +10,25 @@ env:
 
 jobs:
   push:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Build image
-        run: docker build . --file Dockerfile --tag image
+      - uses: actions/checkout@v4
+        with:
+            submodules: true
 
       - name: Log into registries
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
+      - name: Build image
+        run: docker build . --file Dockerfile --tag image
+
       - name: Calculate version number
         id: version
         run: |
           VERSION=$(git describe --tags 2>/dev/null || git rev-parse --short HEAD)
-          echo "::set-output name=version::$VERSION"
+          echo "version=$VERSION" >> $GITHUB_ENV
 
       - name: Push image to GitHub
         run: |
@@ -34,5 +36,5 @@ jobs:
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
           docker tag image $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
-          docker tag image $IMAGE_ID:${{ steps.version.outputs.version }}
-          docker push $IMAGE_ID:${{ steps.version.outputs.version }}
+          docker tag image $IMAGE_ID:$version
+          docker push $IMAGE_ID:$version
