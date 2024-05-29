@@ -116,24 +116,33 @@ jobs:
             az cdn endpoint purge -g ${{ env.STAGING_CDN_RESOURCEGROUP }} -n ${{ env.STAGING_CDN_ENDPOINT }} --profile-name ${{ env.STAGING_CDN_PROFILE }} --content-paths '/*'
 
   deploy-gh-pages:
-    name: Deploy Production (Azure Storage)
+    name: Deploy Production (GitHub Pages)
     runs-on: ubuntu-latest
     needs: [build, deploy-staging]
     if: github.event_name == 'push'
 
     environment:
-      name: GitHub Pages
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
+      - name: Download Artifacts for Website
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: ./dist
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: site
 
   deploy-live:
     name: Deploy Production (Azure CDN)
