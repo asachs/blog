@@ -1,9 +1,9 @@
 <template>
   <BaseLayout>
     <template #sidebar-bottom>
-      <section class="sidebar-group">
-        <p class="sidebar-item sidebar-heading">About</p>
-        <ul>
+      <section class="vp-sidebar-group">
+        <p class="vp-sidebar-item vp-sidebar-heading">About</p>
+        <ul class="post-metadata__list">
           <li class="post-metadata__item">
             Authored
             <DateTime class="post-metadata__date" :time="frontmatter.date" />
@@ -45,8 +45,13 @@ export default defineComponent({
 </script>
 
 <style>
+.post-metadata__list {
+    margin: 0;
+}
+
 .post-metadata__item {
-  padding: .35rem 1rem .35rem 2rem;
+  padding: .2rem 1rem;
+  list-style: none;
 }
 
 .post-metadata__date {
