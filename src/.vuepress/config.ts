@@ -92,6 +92,7 @@ export default defineUserConfig({
             text: "Tooling",
             children: [
               "/projects/git-tool.md",
+              "/projects/github-backup.md",
               "/projects/minback.md"
             ]
           },
