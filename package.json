@@ -22,7 +22,7 @@
     "@vuepress/plugin-sitemap": "^2.0.0-rc.38",
     "@vuepress/theme-default": "2.0.0-rc.38",
     "@vuepress/utils": "2.0.0-rc.14",
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.12",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
     "mermaid": "^10.9.1",
