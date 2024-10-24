@@ -5,9 +5,11 @@
  */
 
 :root {
-    --c-brand: #0F5A80;
-    --c-brand-light: #0F5A80;
-    --c-brand-dark: #0F5A80;
+    --c-brand: #0F5A80 !important;
+    --c-brand-light: #0F5A80 !important;
+    --c-brand-dark: #0F5A80 !important;
+
+    --content-width: 1200px !important;
 }
 
 html.dark {

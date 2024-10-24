@@ -51,6 +51,14 @@ figure.fig-50 {
   float: left;
 }
 
+figure::after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
 @media only screen and (max-width: 719px) {
   figure.fig-33,
   figure.fig-40,

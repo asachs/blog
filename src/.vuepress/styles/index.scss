@@ -79,3 +79,16 @@ a.action-button {
 div[class*="language-ascii"] pre[class*="language-ascii"] {
   line-height: 1em;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  ::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
