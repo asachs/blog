@@ -20,7 +20,7 @@
     "@vuepress/plugin-register-components": "2.0.0-rc.54",
     "@vuepress/plugin-seo": "^2.0.0-rc.57",
     "@vuepress/plugin-sitemap": "^2.0.0-rc.57",
-    "@vuepress/theme-default": "2.0.0-rc.57",
+    "@vuepress/theme-default": "2.0.0-rc.58",
     "@vuepress/utils": "2.0.0-rc.18",
     "dayjs": "^1.11.13",
     "markdown-it-abbr": "^2.0.0",
