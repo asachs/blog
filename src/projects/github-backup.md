@@ -44,20 +44,25 @@ docker run \
 ### Configuration
 
 ```yaml
-backup_path: "/backups" # Where to store the backups
-
 # Run a backup every hour (will use `git fetch` for existing copies)
 # You can also omit this if you want to run a one-shot backup
 schedule: "0 * * * *"
-github:
-  token: "<your-github-token>" # Optional if you are only backing up public repositories
 
 backups:
-  - user: "my-user"
-  - org: "my-org"
-    filters:
-      - !Include ["my-repo-1", "my-repo-2"]
-      - !NonFork
+  - kind: github/repo
+    from: users/my-user
+    to: /backups/personal
+    credentials: !UsernamePassword:
+      username: "<your username>"
+      password: "<your personal access token>"
+  - kind: github/repo
+    from: "orgs/my-org"
+    to: /backups/work
+    filter: '!repo.fork && repo.name contains "awesome"'
+  - kind: github/release
+    from: "orgs/my-org"
+    to: /backups/releases
+    filter: '!release.prerelease && !asset.source-code'
 ```
 
 ### OpenTelemetry Reporting
@@ -79,26 +84,16 @@ This tool allows you to configure filters to control which GitHub repositories a
 which are not. Filters are used within the `backups` section of your configuration file and can
 be specified on a per-user or per-organization basis.
 
-### `!Include [repo1, repo2, ...]`
-Only include the specified repositories in the backup. This filter matches names case-insensitively.
+When writing a filter, the goal is to write a logical expression which evaluates to `true` when
+you wish to include a repository and `false` when you wish to exclude it. The filter language supports
+several operators and properties which can be used to control this process.
 
-### `!Exclude [repo1, repo2, ...]`
-Exclude the specified repositories from the backup. This filter matches names case-insensitively.
+Here are some examples of filters you might choose to use:
 
-### `!Fork`
-Only include repositories which are forks of other repositories.
-
-### `!NonFork`
-Only include repositories which are not forks of other repositories.
-
-### `!Private`
-Only include private repositories.
-
-### `!Public`
-Only include public repositories.
-
-### `!Archived`
-Only include archived repositories.
-
-### `!NonArchived`
-Only include repositories which are not archived.
+  - `!repo.fork || !repo.archived || !repo.empty` - Do not include repositories which are forks, archived, or empty.
+  - `repo.private` - Only include private repositories in your list.
+  - `repo.public && !repo.fork` - Only include public repositories which are not forks.
+  - `repo.name contains "awesome"` - Only include repositories which have "awesome" in their name.
+  - `(repo.name contains "awesome" || repo.name contains "cool") && !repo.fork` - Only include repositories which have "awesome" or "cool" in their name and are not forks.
+  - `!release.prerelease && !asset.source-code` - Only include release artifacts which are not marked as pre-releases and are not source code archives.
+  - `repo.name in ["git-tool", "grey"]` - Only include repositories with the names "git-tool" or "grey".
