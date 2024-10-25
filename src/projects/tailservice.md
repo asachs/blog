@@ -12,18 +12,15 @@ repo: sierrasoftworks/tailservice
 releases: true
 ---
 
-# TailService
-**Easily expose services on your Tailscale network with their own DNS names and TLS certificates.**
+# Tail Service
+**Easily expose services on your [Tailscale](https://tailscale.com/) network.**
 
-TailService provides an extremely easy to use proxy for exposing services on your
+This project provides an extremely easy to use proxy for exposing services on your
 [Tailscale](https://tailscale.com/) network under their own MagicDNS name. It is
 particularly useful if you're hosting several services on the same machine and
 want to access them by name instead of needing to remember port numbers.
 
 ## Installation
-You can either download the latest release from
-[GitHub](https://github.com/sierrasoftworks/tailservice/releases)
-or install from source using `go install` as shown below.
 
 ```bash
 go install github.com/sierrasoftworks/tailservice@latest
@@ -63,6 +60,18 @@ tailservice --name my-service --udp 53:8.8.4.4:53
 # Forwards TLS traffic from port 443 on the Tailnet service
 # to port 8080 on another Tailnet node.
 tailservice --name my-service --tls 443:example-node.tails-scales.ts.net:8080
+```
+
+### Exposing services using Funnel
+Tailscale's Funnel functionality allows you to expose tailnet services to the public
+internet, allowing clients without Tailscale installed to access the service. To enable
+this functionality, you can use the `--funnel` flag when starting `tailservice` and
+configure a listener on port `443`, `8443` or `10000`.
+
+```bash
+# Forwards TLS traffic from port 443 on your funnel endpoint to
+# port 8080 on the local machine.
+tailservice --name my-service --tls 443:8080 --funnel
 ```
 
 ### Running in Ephemeral Mode
