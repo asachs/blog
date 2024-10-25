@@ -92,3 +92,14 @@ h6 {
     clear: both;
   }
 }
+
+div > figure,
+div > img {
+  display: block;
+  margin: 0 auto;
+}
+
+div > img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}

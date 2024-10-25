@@ -23,7 +23,7 @@ looking add another printer to my home lab, alongside my trusty Voron 2.4R2, and
 of several printers I considered - it is also ultimately the one I chose to purchase based on its unique
 set of trade-offs.
 
-<img src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-dark.jpg" alt="The Prusa XL wrapped in the Prusa Official XL Enclosure is a sight to behold." style="display: block; width: 60%; margin: 0 auto;">
+<img src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-dark.jpg" width="500" />
 
 The biggest challenge I faced making this decision was the lack of any deep technical reviews of the Prusa
 XL, so I'm going to try and close that gap here by sharing my thoughts and experiences through the lens of
@@ -32,17 +32,16 @@ someone who has spent the last couple of years diving into the guts of what make
 <!-- more -->
 
 ## My Background
-
-<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-voron-24.jpg" width="50">
-My Voron 2.4R2 in its current configuration, with its Xol toolhead, carbon filters, and Beefy Front Idlers visible.
-</Figure>
-
 I mentioned that I've got a Voron 2.4R2, which I've been using for the last couple of years. As with most
 Voron printers, there are many like it but this one is mine. Over the last few years it has evolved from
 a relatively stock Formbot kit into a machine where very little of the original printer remains. I've run
 everything from CANBUS, to Tap, to Cartographer, to Xol, DragonBurner, Cartographer Touch (and back again)
 and moved from a DragonHF hotend to a Slice Mosquito Magnum, I've swapped out motors and drivers, switched to
 Sensorless, and designed a wide range of improvements to address pain points.
+
+<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-voron-24.jpg" :width="50">
+My Voron 2.4R2 in its current configuration, with its Xol toolhead, carbon filters, and Beefy Front Idlers visible.
+</Figure>
 
 It's fair to say that I've spent well over a thousand hours tinkering and tuning my printer, and that has
 resulted in a machine which, for the most part, I can trust to just print whatever I need, whenever I need it,
@@ -55,16 +54,16 @@ brings me to the Prusa XL.
 
 ## First Impressions
 
-<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-buildplate.jpg" width="50">
-The Prusa XL is exquisitely designed and built, bringing a smile to my face every time I see it (especially in the dark).
-</Figure>
-
 The Prusa XL is unmistakably engineered by people who use 3D printers in anger. Every aspect of it has clearly
 been thought out to ensure that it will just work, and work consistently, for a long time. It's also clear that,
 unlike some of the more mainstream consumer printers which have made their way into the market, the Prusa XL is
 designed to facilitate easy and open maintenance: it reminds me of an old tractor in that respect. There's no
 sign that you'll need to purchase a replacement gantry assembly if things fail - instead almost everything is either
 metal, 3D printable, or relatively easy to source (modulo the electronics).
+
+<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-buildplate.jpg" :width="50">
+The Prusa XL is exquisitely designed and built, bringing a smile to my face every time I see it (especially in the dark).
+</Figure>
 
 In some respects, it's a bit like a cross-over between the best parts of a Voron (it's yours, you're not just leasing it)
 and the best parts of an iPhone (it just works, out of the box, with no fuss). The former is why I dismissed BambuLab and
@@ -151,12 +150,12 @@ power switch is a perfectly valid way to turn it off. Again, simple, effective, 
 ## Printing with the Prusa XL
 
 <div style="display: flex; flex-direction: row; justify-content: space-between;">
-<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-print-firstlayer.jpg" width="50">
+<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-print-firstlayer.jpg" :width="50">
 The first layers laid down by the Prusa XL are flawless, with consistent height, good squish, and no adhesion issues
 right out of the "box".
 </Figure>
 
-<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-print-layerlines.jpg" width="50">
+<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-print-layerlines.jpg" :width="50">
 The layer stacking shown on my Prusa XL is also excellent, with 0.2mm layer lines disappearing in this Prusament Galaxy Black PLA.
 </Figure>
 </div>
@@ -184,17 +183,16 @@ moves, so tuning maximum acceleration and speed settings for your profile might 
 at the cost of print times.
 
 ### Print Speeds
-
-<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-nextruder-top.jpg" width="50">
-A top-down view of the Nextruder, showing the degree to which it extends beyond the X-rail.
-</Figure>
-
 It's worth noting that the Prusa XL is not intrinsically designed to be a fast printer. The Nextruders, for all of their
 wonderful engineering, are heavy toolheads whose center of mass resides a long way from the X-rail. Said X-rail is an
 MGN-12H attached to a relatively small support structure and moved with 6mm Gates GT2 belts - all very familiar for a 
 Voron user. Those 6mm belts are longer than you'd find on your typical 350x350mm build volume to accommodate the 
 tool-changer, and all of that leads to a printer whose maximum acceleration tops out at $5000mm/s^2$ for travel moves
 and a pedestrian $4000mm/s^2$ for infill moves in the default "Speed" profiles.
+
+<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-nextruder-top.jpg" :width="50">
+A top-down view of the Nextruder, showing the degree to which it extends beyond the X-rail.
+</Figure>
 
 Contrast this with the work the Voron community has done to push the limits of the 2.4 and Trident platforms, with
 accelerations in the $10,000mm/s^2$ range being easily achievable for travel moves, and AWD configurations being able
@@ -210,17 +208,17 @@ demonstrating that the XL is at least twice as fast, and with a failure rate ord
 
 <YouTube id="qrqGMcbqetU" :width="640" :height="400" />
 
-<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-print-multicolour.jpg" width="33">
-Combining multiple materials in a single print is a breeze, and the resulting prints show no signs of boundary
-imperfections or colour artifacts.
-</Figure>
-
 By opting to use a tool-changer, the Prusa XL avoids an entire class of potential failure modes which plague other
 multi-material configurations, and doesn't require slow or wasteful workarounds to mitigate them. Of course, it does
 introduce a new class of failure mode: a failure to correctly align each of the tool-heads with one another can result
 in imperfections where the materials meet. Fortunately, the Prusa XL uses a reference pin and a comprehensive automated
 calibration routine to address this for you. In practice, the results I got after completing the calibration routine
 were perfect, with no visible imperfections or differences in output quality between the different materials.
+
+<Figure src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-print-multicolour.jpg" :width="50">
+Combining multiple materials in a single print is a breeze, and the resulting prints show no signs of boundary
+imperfections or colour artifacts.
+</Figure>
 
 I can attest to the fact that on the XL, printing in multiple materials is quick and easy enough that I don't consider it as
 a factor in my print planning, instead focusing on what I'd like to design rather than on whether it's worth the extra

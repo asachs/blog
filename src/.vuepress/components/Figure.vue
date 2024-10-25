@@ -3,7 +3,6 @@
     <img :src="src" :alt="alt" :title="alt" />
     <figcaption><slot></slot></figcaption>
   </figure>
-  <div class="clearfix"></div>
 </template>
 
 <script>
@@ -36,27 +35,33 @@ export default defineComponent({
     font-weight: bold;
 }
 
+figure {
+  padding: 1rem;
+}
+
 figure.fig-33 {
   width: 33%;
-  float: left;
 }
 
 figure.fig-40 {
   width: 40%;
-  float: left;
 }
 
 figure.fig-50 {
   width: 50%;
-  float: left;
 }
 
-figure::after {
+.clearfix {
   content: " ";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
+}
+
+figure img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media only screen and (max-width: 719px) {
