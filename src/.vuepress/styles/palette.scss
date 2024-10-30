@@ -5,16 +5,20 @@
  */
 
 :root {
-    --c-brand: #0F5A80 !important;
-    --c-brand-light: #0F5A80 !important;
-    --c-brand-dark: #0F5A80 !important;
+    --c-brand: #0F5A80;
+    --c-brand-light: #117bb0;
+    --c-brand-dark: #104a67;
+
+    --vp-c-accent-bg: var(--c-brand);
+    --vp-c-accent-hover: var(--c-brand-light);
+    --vp-c-accent: var(--c-brand);
 
     --content-width: 1200px !important;
     --homepage-width: 1200px !important;
 }
 
-html.dark {
+html[data-theme="dark"] {
     --c-brand: #1FB3FF;
-    --c-brand-light: #6BCEFF;
+    --c-brand-light: #49b5eb;
     --c-brand-dark: #0F5A80;
 }
