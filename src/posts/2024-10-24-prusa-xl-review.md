@@ -71,11 +71,11 @@ Creality's printers, and the latter is why I dismissed options like the Siboor T
 
 Prusa's software ecosystem follows a similar pattern: PrusaSlicer forms the backbone upon which most of our slicers
 are derived (BambuSlicer/OrcaSlicer) and Prusa Research has consistently contributed open source improvements which
-have elevated the quality of 3D printing for everyone - however when comparing PrusaLink (the software running on the 
+have elevated the quality of 3D printing for everyone - however when comparing PrusaLink (the software running on the
 printer) and PrusaConnect (their cloud management service) against something like Klipper and Mainsail; I can't help
 but feel like the experience is a long way from the cutting edge (especially when it comes to things like remote camera
 monitoring, or the integration of additional I/O devices). If Klipper is a Linux server, then PrusaLink is an iPhone -
-it works well but it's intrinsically limited in terms of what you can do. For most people that's not a bad thing. 
+it works well but it's intrinsically limited in terms of what you can do. For most people that's not a bad thing.
 
 ### The Official Enclosure
 Another impression also resonates: this is a printer designed for PLA and PETG. Out of the (substantial) box,
@@ -119,7 +119,7 @@ tachometers to report RPM. It's a small thing, but fan failures do happen and wh
 to only impact your print, a hotend fan failure can quickly turn into a disaster. Having the printer monitor the RPM of
 every fan means it can detect fan failures and stalls proactively, and prevent the situation from getting any worse.
 
-This level of care extends to the automated crash detection, which leverages the force sensor and motor-driver StallGuard 
+This level of care extends to the automated crash detection, which leverages the force sensor and motor-driver StallGuard
 to automatically detect nozzle and toolhead crashes, something which I have wished for in Klipper for years. It's these
 little things which make me far more comfortable leaving the printer running without supervision - letting me focus on
 other things while the printer does its job.
@@ -128,7 +128,7 @@ other things while the printer does its job.
 While we're on the topic of things the printer does to keep itself safe, I think it's worth talking about the firmware
 and design decisions taken by the Prusa team. I've spent years tweaking and tuning my Voron configurations (with over 400 commits to my configuration management repository), and watching the Prusa XL do its thing highlights some brilliant ideas which place an emphasis on safety and reliability over speed and benchmarking.
 
-The first thing you'll notice is the way in which the gantry performs its homing operation. The Prusa XL uses Sensorless 
+The first thing you'll notice is the way in which the gantry performs its homing operation. The Prusa XL uses Sensorless
 Homing which relies on the motor driver's StallGuard functionality to detect when the gantry has reached the end of its
 travel. This is something many Voron users use, but the Prusa XL takes the process a step further to alleviate a range
 of failure modes which are all too familiar to Voron users:
@@ -141,9 +141,9 @@ Changing filament is a breeze, common maintenance and print tuning options are e
 calibration process is intuitive and works perfectly.
 
 Ultimately, the best thing I can say about the firmware is that it's good enough that I don't think about it (and in many
-ways it works better than KlipperScreen, which is saying something). Perhaps the most amusing shift in expectations I've 
-faced centers on power management: as someone who has traditionally used a Raspberry Pi to manage my printer, and who has 
-had to be careful about how they restart or power cycle it; I spent a good 5 minutes hunting through menus trying to find 
+ways it works better than KlipperScreen, which is saying something). Perhaps the most amusing shift in expectations I've
+faced centers on power management: as someone who has traditionally used a Raspberry Pi to manage my printer, and who has
+had to be careful about how they restart or power cycle it; I spent a good 5 minutes hunting through menus trying to find
 how to restart the XL before I realized that the big, red, Reset button takes care of all of that for you. Similarly, the
 power switch is a perfectly valid way to turn it off. Again, simple, effective, and reliable.
 
@@ -168,12 +168,12 @@ artifacts, perfect first and top layers, just perfect prints.
 This contrasts with my Voron, which required careful tuning before I got anything approaching this level of quality, and
 which can be fussy enough that I generally just stick to known good profiles and filaments.
 
-That said, the printing experience is not perfect. The Prusa XL is loud. Not just loud relative to a quiet printer (the 
+That said, the printing experience is not perfect. The Prusa XL is loud. Not just loud relative to a quiet printer (the
 Voron 2.4R2 when fully enclosed and running StealthBurner is fairly quiet when running in another room), but loud enough
-that it is disturbing on the other side of the house. For all the work done to ensure the fans are quiet, the XY gantry 
+that it is disturbing on the other side of the house. For all the work done to ensure the fans are quiet, the XY gantry
 movements, even on "Stealth" mode, are loud enough to raise eyebrows.
 
-I had hoped the enclosure would help cut down on this noise, however that has not been the case in its stock 
+I had hoped the enclosure would help cut down on this noise, however that has not been the case in its stock
 configuration. Part of this likely stems from the significant ventilation provided in the base configuration, and part of
 it likely stems from the XY motors being exposed rather than enclosed as is the case for the Voron 2.4R2.
 
@@ -185,8 +185,8 @@ at the cost of print times.
 ### Print Speeds
 It's worth noting that the Prusa XL is not intrinsically designed to be a fast printer. The Nextruders, for all of their
 wonderful engineering, are heavy toolheads whose center of mass resides a long way from the X-rail. Said X-rail is an
-MGN-12H attached to a relatively small support structure and moved with 6mm Gates GT2 belts - all very familiar for a 
-Voron user. Those 6mm belts are longer than you'd find on your typical 350x350mm build volume to accommodate the 
+MGN-12H attached to a relatively small support structure and moved with 6mm Gates GT2 belts - all very familiar for a
+Voron user. Those 6mm belts are longer than you'd find on your typical 350x350mm build volume to accommodate the
 tool-changer, and all of that leads to a printer whose maximum acceleration tops out at $5000mm/s^2$ for travel moves
 and a pedestrian $4000mm/s^2$ for infill moves in the default "Speed" profiles.
 
@@ -197,13 +197,13 @@ A top-down view of the Nextruder, showing the degree to which it extends beyond 
 Contrast this with the work the Voron community has done to push the limits of the 2.4 and Trident platforms, with
 accelerations in the $10,000mm/s^2$ range being easily achievable for travel moves, and AWD configurations being able
 to push $20,000mm/s^2$ for infill moves. The net result is that in a basic speed race, the Prusa XL isn't going to win
-any prizes - and this is further exacerbated by its careful and ponderous pre-print setup process (which clocks in at 
+any prizes - and this is further exacerbated by its careful and ponderous pre-print setup process (which clocks in at
 well over 5 minutes before laying down the first layer - in contrast to the mere 1m20s for my Voron to do the same thing).
 
 That said, the Prusa XL isn't designed to compete on raw speed. It's designed to be run in a 5-toolhead configuration,
 producing complex engineering parts with a combination of different materials, colours, and low cost supports. The moment
 you start to play that game, the Prusa XL really dusts off its gloves and gets to work. There are some great comparative
-reviews of print times and defect rate for multi-material prints - comparing the BambuLab AMS to the Prusa XL and 
+reviews of print times and defect rate for multi-material prints - comparing the BambuLab AMS to the Prusa XL and
 demonstrating that the XL is at least twice as fast, and with a failure rate orders of magnitude lower than the AMS.
 
 <YouTube id="qrqGMcbqetU" :width="640" :height="400" />
@@ -231,12 +231,12 @@ but given the cost of the printer it's unlikely you're going to be saving money 
 The model I generally use for accuracy testing is the [Vector3D Calilantern](https://vector3d.shop/products/calilantern-calibration)
 which provides both an accurate assessment of linear errors (scaling) but also skew (rotational transforms)
 generated by physical imperfections in the printer's assembly. The Calilantern reports a score in the range $[0..1000]$
-with $1000$ representing absolute perfection and $0$ representing $\ge0.25\degree$ of skew and $\ge0.6%$ scaling error
-on all axes. In practice, I've found that scores $\ge500$ are more than good enough for most practical engineering 
+with $1000$ representing absolute perfection and $0$ representing $\ge0.25\degree$ of skew and $\ge0.6\%$ scaling error
+on all axes. In practice, I've found that scores $\ge500$ are more than good enough for most practical engineering
 purposes.
 
 In my case, the Prusa XL spits out a score of $741$ without any tuning or calibration, with an average skew of
-$0.09\degree$ and a uniform scaling error of $0.2%$ which can easily be corrected in the slicer for this filament.
+$0.09\degree$ and a uniform scaling error of $0.2\%$ which can easily be corrected in the slicer for this filament.
 I would consider this an exceptional result. To put that into perspective, it's good enough to hit 0.2mm tolerances
 on a 100mm part - as I said, exceptional.
 

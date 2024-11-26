@@ -1,7 +1,9 @@
 <template>
   <figure class="image-figure" :class="classes">
     <img :src="src" :alt="alt" :title="alt" />
-    <figcaption><slot></slot></figcaption>
+    <figcaption>
+      <slot></slot>
+    </figcaption>
   </figure>
 </template>
 
@@ -9,12 +11,12 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   props: {
-      src: {
-          type: String,
-          required: true
-      },
-      alt: String,
-      width: Number
+    src: {
+      type: String,
+      required: true
+    },
+    alt: String,
+    width: Number
   },
   setup(props) {
     return {
@@ -30,9 +32,9 @@ export default defineComponent({
 
 <style>
 .image-figure figcaption {
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 figure {
@@ -65,6 +67,7 @@ figure img {
 }
 
 @media only screen and (max-width: 719px) {
+
   figure.fig-33,
   figure.fig-40,
   figure.fig-50 {
