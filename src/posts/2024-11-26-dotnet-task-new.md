@@ -59,7 +59,7 @@ My thought process reviewing this code went something like this:
  - "This is not something I see often, it seems like they're constructing a no-op task, isn't `Task.CompletedTask` the idiomatic way to do that?"
  - "They're trying to ensure that the `Task` never completes, so how would that work at all if the associated action returns immediately?"
  - "The tests are passing, so this clearly does work, that means I am missing an understanding of how this works under the hood."
- - "I think the idiomatic approach here would be to use `Task.Delay(TimeSpan.MaxValue)`, and now let's go learn something..."
+ - "I think the idiomatic approach here would be to use `Task.Delay(...)`, and now let's go learn something..."
 
 ## Reproducing the Behaviour
 My first step when I am faced with behaviour I don't understand, like this, is to create a minimal reproduction of that
