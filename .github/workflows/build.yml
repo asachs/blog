@@ -11,16 +11,10 @@ env:
   STAGING_DEPLOYMENT_CLIENT_ID: 9585b6c7-20f9-4756-9e8c-4b34585ac8ca
   STAGING_STORAGE_CONTAINER: "$web"
   STAGING_STORAGE_ACCOUNT: "blogsierrasoftworksbeta"
-  STAGING_CDN_RESOURCEGROUP: ""
-  STAGING_CDN_PROFILE: ""
-  STAGING_CDN_ENDPOINT: ""
 
   LIVE_DEPLOYMENT_CLIENT_ID: 63951991-4dc9-4524-92cb-53b73016393c
   LIVE_STORAGE_CONTAINER: "$web"
   LIVE_STORAGE_ACCOUNT: "blogsierrasoftworks"
-  LIVE_CDN_RESOURCEGROUP: ""
-  LIVE_CDN_PROFILE: ""
-  LIVE_CDN_ENDPOINT: ""
 
 permissions:
   id-token: write
@@ -108,14 +102,6 @@ jobs:
             echo "Uploading Site Contents"
             az storage blob sync --container '${{ env.STAGING_STORAGE_CONTAINER }}' --account-name ${{ env.STAGING_STORAGE_ACCOUNT }} --source ./dist
 
-      - name: Purge Azure CDN
-        uses: azure/CLI@v2
-        if: "${{ env.STAGING_CDN_PROFILE }} != ''"
-        with:
-          inlineScript: |
-            echo "Purging CDN"
-            az cdn endpoint purge -g ${{ env.STAGING_CDN_RESOURCEGROUP }} -n ${{ env.STAGING_CDN_ENDPOINT }} --profile-name ${{ env.STAGING_CDN_PROFILE }} --content-paths '/*'
-
   deploy-gh-pages:
     name: Deploy Production (GitHub Pages)
     runs-on: ubuntu-latest
@@ -175,14 +161,6 @@ jobs:
           inlineScript: |
             echo "Uploading Site Contents"
             az storage blob sync --container '${{ env.LIVE_STORAGE_CONTAINER }}' --account-name ${{ env.LIVE_STORAGE_ACCOUNT }} --source ./dist
-
-      - name: Purge Azure CDN
-        uses: azure/CLI@v2
-        if: "${{ env.LIVE_CDN_PROFILE }} != ''"
-        with:
-          inlineScript: |
-            echo "Purging CDN"
-            az cdn endpoint purge -g ${{ env.LIVE_CDN_RESOURCEGROUP }} -n ${{ env.LIVE_CDN_ENDPOINT }} --profile-name ${{ env.LIVE_CDN_PROFILE }} --content-paths '/*'
 
   cleanup:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
