@@ -11,16 +11,16 @@ env:
   STAGING_DEPLOYMENT_CLIENT_ID: 9585b6c7-20f9-4756-9e8c-4b34585ac8ca
   STAGING_STORAGE_CONTAINER: "$web"
   STAGING_STORAGE_ACCOUNT: "blogsierrasoftworksbeta"
-  STAGING_CDN_RESOURCEGROUP: app-blog
-  STAGING_CDN_PROFILE: "blog-sierrasoftworks"
-  STAGING_CDN_ENDPOINT: "blog-sierrasoftworks-staging"
+  STAGING_CDN_RESOURCEGROUP: ""
+  STAGING_CDN_PROFILE: ""
+  STAGING_CDN_ENDPOINT: ""
 
   LIVE_DEPLOYMENT_CLIENT_ID: 63951991-4dc9-4524-92cb-53b73016393c
   LIVE_STORAGE_CONTAINER: "$web"
   LIVE_STORAGE_ACCOUNT: "blogsierrasoftworks"
-  LIVE_CDN_RESOURCEGROUP: app-blog
-  LIVE_CDN_PROFILE: "blog-sierrasoftworks"
-  LIVE_CDN_ENDPOINT: "blog-sierrasoftworks-live"
+  LIVE_CDN_RESOURCEGROUP: ""
+  LIVE_CDN_PROFILE: ""
+  LIVE_CDN_ENDPOINT: ""
 
 permissions:
   id-token: write
@@ -110,6 +110,7 @@ jobs:
 
       - name: Purge Azure CDN
         uses: azure/CLI@v2
+        if: "${{ env.STAGING_CDN_PROFILE }} != ''"
         with:
           inlineScript: |
             echo "Purging CDN"
@@ -177,6 +178,7 @@ jobs:
 
       - name: Purge Azure CDN
         uses: azure/CLI@v2
+        if: "${{ env.LIVE_CDN_PROFILE }} != ''"
         with:
           inlineScript: |
             echo "Purging CDN"
